@@ -1,0 +1,151 @@
+* {
+    font-family: 'Roboto', Arial, sans-serif;
+}
+header, footer, .signup {
+    background-color: #1f2937;
+}
+
+footer, .signup, .main-info, .thor-said, .fstone {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+header h2 { 
+    color: #f9faf8;
+    font-weight: bolder;
+}
+
+header {
+    display: flex;
+    justify-content: right;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
+    gap: 10px;
+}
+
+a:link,
+a:hover,
+a:visited {
+    text-decoration: none;
+    font-size:medium
+}
+
+header a {
+    border: 2px solid #f9faf8;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.hlogo {
+    margin-right:auto;
+}
+.signup h2 {
+    font-size: 48px;
+    color:#f9faf8;
+}
+
+.signup {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 24px;
+}
+
+#hero {
+    max-width: 50%;
+}
+a, p {
+    font-size: 18px;
+    color: #e5e7eb;
+}
+
+#imgph {
+    background-color: #e5e7eb;
+    min-width: 300px;
+    min-height: 300px;
+}
+
+button {
+    background-color: #3882F6;
+    color: #f9faf8;
+    border-radius: 5px;
+    padding: 8px 30px;
+    font-size: medium;
+
+    font-weight: bold;
+}
+
+.main-info h2 {
+text-align: center;
+}
+
+.ilmenu {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+img {
+    max-width: 150px;
+    max-height: 140px;
+    border:2px solid #3882F6;
+    border-radius: 6px;
+}
+
+figure {
+    max-width: 150px;
+}
+
+figcaption {
+    text-align: center;
+}
+
+.thor-said {
+    background-color: #E5E7Eb;
+    padding: 40px 11% 40px 11%;
+}
+
+blockquote {
+    font-size: 36px;
+    font-style: oblique 10deg;
+    color: #1f2937
+}
+
+cite {
+    font-weight: bold;
+
+    font-style: normal;
+}
+
+#thorcite {
+    text-align: right;
+}
+
+.fstone {
+    background-color:#3882F6;
+    margin: 48px 5% 48px 5%;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 7px;
+}
+
+.fstone h2 {
+    color: #f9faf8;
+}
+
+#sgnbtn2 {
+    box-shadow: 1px 1px #f9faf8;
+}
+
+footer {
+    text-align: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+footer p {
+    color: #f9faf8;
+}
