@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM exercises</title>
+</head>
+<body>
+ <!--
+  <button>9a</button>
+  <button class="js-button-two">9b</button>
+ --> 
+  
+  <button id="js-heads" onclick="
+    resMessage('heads')
+  ">heads</button>
+  <button id="js-tails" onclick="
+    resMessage('tails')
+  ">tails</button>
+  <p id="js-text"></p>
+
+  <input type="text" placeholder="What is your Name?" id="nameask" onkeydown="fetchName(event)">
+  <button id="js-subbutton" onclick="
+    bamboozle()
+  ">Submit</button>
+  <p id="js-name-output"></p>
+  <script>
+
+    let ansArea = document.querySelector('#js-name-output');
+    let nameAsk = document.querySelector('#nameask');
+
+    function fetchName(event) {
+      if (event.key === 'Enter') {
+      bamboozle();
+      }
+    }
+
+    function bamboozle() {
+      ansArea.innerHTML = `Why, WHYYY? Answer me, ${nameAsk.value}!`
+    };
+
+
+
+
+    let resArea = document.querySelector('#js-text');
+
+    function resMessage(variant) {
+      resArea.innerHTML = `You chose: ${variant}`;
+    }
+
+
+   /*
+   const nineA = document.querySelector('button');
+   console.log(nineA);
+   let nineB = document.querySelector('.js-button-two');
+   nineB.innerHTML = '9b done';
+   */
+  </script>
+</body>
+</html>

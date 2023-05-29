@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    button {
+      border-radius: 5px;
+      width: 30px;
+      height: 30px;
+      font-weight: bold;
+    }
+    p {
+      margin: 5px;
+    }
+    #clear, #equal {
+      width: 81px;
+    }
+  </style>
+</head>
+<body>
+  <p>
+    <button id="one">1</button>
+    <button id="two">2</button>
+    <button id="three">3</button>
+    <button id="addition">+</button>
+    <button id="substraction">-</button>
+  </p>
+  <p>
+    <button id="four">4</button>
+    <button id="five">5</button>
+    <button id="six">6</button>
+    <button id="multiplication">*</button>
+    <button id="divide">/</button>
+  </p>
+  <p>
+    <button id="seven">7</button>
+    <button id="eight">8</button>
+    <button id="nine">9</button>
+    <button id="zero">0</button>
+    <button id="dot">.</button>
+  </p>
+  <p>
+    <button id="clear">CLEAR</button>
+    <button id="equal">=</button>
+  </p>
+
+
+  
+</body>
+<script>
+  let calculation =""; 
+
+
+
+  document.getElementById('one').addEventListener("click", One);
+    function One() {
+      calculation += '1';
+      console.log(calculation);
+    }
+
+    document.getElementById('two').addEventListener("click", Two);
+    function Two() {
+      calculation += '2';
+      console.log(calculation);
+    } 
+    
+    document.getElementById('three').addEventListener("click", Three);
+    function Three() {
+      calculation += '3';
+      console.log(calculation);
+    }
+
+    document.getElementById('four').addEventListener("click", Four);
+    function Four() {
+      calculation += '4';
+      console.log(calculation);
+    }
+
+    document.getElementById('five').addEventListener("click", Five);
+    function Five() {
+      calculation += '5';
+      console.log(calculation);
+    }
+
+    document.getElementById('six').addEventListener("click", Six);
+    function Six() {
+      calculation += '6';
+      console.log(calculation);
+    }
+    document.getElementById('seven').addEventListener("click", Seven);
+    function Seven() {
+      calculation += '7';
+      console.log(calculation);
+    }
+    document.getElementById('eight').addEventListener("click", Eight);
+    function Eight() {
+      calculation += '9';
+      console.log(calculation);
+    }
+    document.getElementById('nine').addEventListener("click", Nine);
+    function Nine() {
+      calculation += '9';
+      console.log(calculation);
+    }
+    document.getElementById('zero').addEventListener("click", Zero);
+    function Zero() {
+      calculation += '0';
+      console.log(calculation);
+    }
+    document.getElementById('addition').addEventListener("click", Plus);
+    function Plus() {
+      calculation += ' + ';
+      console.log(calculation);
+    }
+    document.getElementById('substraction').addEventListener("click", Minus);
+    function Minus() {
+      calculation += ' - ';
+      console.log(calculation);
+    }
+    document.getElementById('multiplication').addEventListener("click", multiple);
+    function multiple() {
+      calculation += ' * ';
+      console.log(calculation);
+    }
+    document.getElementById('divide').addEventListener("click", Divide);
+    function Divide() {
+      calculation += ' / ';
+      console.log(calculation);
+    }
+    document.getElementById('dot').addEventListener("click", Dot);
+    function Dot() {
+      calculation += '.';
+      console.log(calculation);
+    }
+    document.getElementById('clear').addEventListener("click", Clear);
+    function Clear() {
+      calculation = '';
+      console.log(calculation);
+    }
+
+    document.getElementById('equal').addEventListener('click', Equation);
+    function Equation() {
+      calculation = eval(calculation);
+      console.log(calculation);
+    }
+</script>
+</html>

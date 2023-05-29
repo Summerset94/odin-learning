@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    //12 J, K
+    let multiply = (one, two) => one * two;
+
+    //12 L
+    let outputCount = '';
+    function countPositive(nums) {
+      nums.forEach( (value) => {
+        if (value > 0) {
+          outputCount++;
+        }
+      })
+      console.log(outputCount);
+      };
+
+    //12 M
+    function addNum (array, num) {
+      const mResult = array.map(x => x + num);
+      console.log(mResult);
+    }
+
+    addNum([2, 4, 6,8], 3);
+
+    //12 N
+    function removeEgg(foods) {
+      const nResult = foods.filter(checkBasket);
+      console.log(nResult);
+    }
+    
+    function checkBasket(x) {
+      return x !== 'egg'};
+    let basket = ['egg', 'ham', 'potato', 'severed head', 'egg', 'apple', 'egg', 'egg'];
+    removeEgg(basket);
+
+    //12 O
+    function cutTwoBalls(foods) {
+      let ballsCut = 0;
+      const oResult = foods.filter((item) => {
+        if (item === 'egg' && ballsCut < 2) {
+          ballsCut++;
+          return false;
+        }
+        return true;
+      });
+      console.log(oResult);
+    };
+  </script>
+</body>
+</html>

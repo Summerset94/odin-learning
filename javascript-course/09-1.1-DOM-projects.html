@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Projects</title>
+</head>
+<body>
+  <h4>YouTube Subscribe Button</h4>
+  <p><button id="js-ytsub" onclick="
+  subscribe();
+  ">Subscribe</button></p>
+  
+  <p>Rock Paper Scissors</p><br>
+  <a href="09-1.1-DOM-RPS.html" target="_blank">Click here</a>
+
+  <p>Amazon Shipping Calculator <br>
+  Order under $40 have $10 shipping fee <br>
+  Orders over $40 include free shipping</p>
+  <p><input type="text" class="js-cost-input" placeholder="Cost of order"
+    onkeydown="
+  handleCostKeydown(event);
+      "> 
+  <button id="js-ship-calc" onclick="
+  CalculateTotal();
+  ">Calculate</button> <br>
+  <span id="order-total"></span></p>
+
+  <script>
+    String(25)
+    console.log('25'- 5);
+    console.log("25" + 5);
+
+    window.document
+    window.console
+    window.alert
+
+
+    function handleCostKeydown(event) {
+      if (event.key === 'Enter') {
+      CalculateTotal();
+      }
+    }
+
+    function CalculateTotal() {
+      const inputElement = document.querySelector('.js-cost-input');
+      let cost = Number(inputElement.value);
+
+      if (cost < 40) {
+        cost += 10;
+      }
+
+      document.querySelector('#order-total')
+        .innerHTML = `$${cost}`;
+    }
+
+    function subscribe() {
+      const buttonElement = document.querySelector('#js-ytsub');
+  
+      if (buttonElement.innerText === 'Subscribe') {
+      buttonElement.innerHTML = 'Subscribed';   
+      } else {
+        buttonElement.innerHTML = 'Subscribe';
+      }
+    }
+  </script>
+</body>
+</html>

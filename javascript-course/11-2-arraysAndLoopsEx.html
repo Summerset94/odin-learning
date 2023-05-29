@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    // 11a
+    const nums = [10, 20, 30];
+    nums[2] = 99;
+
+    //11b
+    let fetched = nums.slice(-1);
+    let fetchedanalog = nums[nums.length - 1];
+
+    function getLastValue(array) {
+      const lastIndex = array.length -1;
+      return array[lastIndex];
+    }
+
+    //11c
+    function arraySwap(array) {
+      const lastIndex = array.length - 1;
+      const lastValue = array[lastIndex];
+        const firstValue = array[0];
+
+        array[0] = lastValue;
+        array[lastIndex] = firstValue;
+
+        return array;
+    }
+
+    //11d
+    const countD = [0, 1, 2, 3, 4, 5];
+    let resultD = [];
+
+    for (i = 0; i <= 5; i++) {
+      let fetchedD = countD[i];
+      resultD.push(fetchedD * 2);
+
+    }
+    console.log(resultD);
+
+    //11e
+    const countE = [0, 1, 2, 3, 4, 5];
+    let resultE = []
+
+    for (i = (countE.length -1); i >= 0; i--) {
+      let fetchedE = countE[i];
+      resultE.push(fetchedE);
+    }
+    console.log(resultE);
+
+    //11f
+
+    const countF = [0, 1, 2, 3, 4, 5];
+    let iF1 = 0; 
+    let iF2 = (countF.length - 1);
+    let resultF1 = [];
+    let resultF2 = [];
+    let fetchedF1 = '';
+    let fetchedF2 = '';
+  
+    while (iF1 <= 5) {
+      fetchedF1 = countF[iF1];
+      resultF1.push(fetchedF1);
+      iF1++;
+    }
+    console.log(resultF1);
+
+    while (iF2 >= 0) {
+      fetchedF2 = countF[iF2];
+      resultF2.push(fetchedF2);
+      iF2--;
+    }
+    console.log(resultF2);
+
+    //11g
+    const countG = [1, 2, 3, 4, 5, 6,];
+    resultG = [];
+    for (iG = 0; iG <= countG.length - 1; iG++) {
+      fetchedG = countG[iG] + 1;
+      resultG.push(fetchedG);
+    }
+    console.log(resultG);
+
+    //11h
+    function addOne(array) {
+      let resultH = [];
+      for (i = 0; i < array.length; i++) {
+        fetchedH = array[i] + 1;
+        resultH.push(fetchedH);
+      }
+      console.log(resultH);
+    }
+    addOne([7, 15, 23, 46, 17, 24]);
+
+    //11j
+    function addArrays(array1, array2) {
+      let resultJ = [];
+      for (ij = 0; ij < array1.lenght || ij < array2.length; ij++) {
+        fetchedJ = array1[ij] + array2[ij];
+        resultJ.push(fetchedJ);
+      }
+      console.log(resultJ);
+    }
+
+    addArrays([2, 4, 6, 8, 10,], [2, 2, 2, 2, 2, 'testvalue']);
+
+    //11k
+    function countPositive(arraynums) {
+      let resultK = 0;
+      for (ik = 0; ik < arraynums.length; ik++){
+        fetchedk = arraynums[ik];
+        if (fetchedk > 0) {
+          resultK++;
+        }
+      }
+      console.log(resultK);
+    }
+    countPositive([-5, 2, -7, 8, 46, 829, -3, 0]);
+    
+    //11l
+    function minMax(getArray) {
+      const resultL = { min: getArray[0], max: getArray[0]};
+      let storedNumber = getArray[0];
+      for (iL = 0; iL < getArray.length; iL++) {
+        let storedNumber = getArray[iL]
+        if (storedNumber < resultL.min) {
+          resultL.min = storedNumber
+        };
+
+        if (storedNumber > resultL.max) {
+          resultL.max = storedNumber
+        }
+      }
+      console.log(resultL)
+      return resultL;
+    }
+
+    let testArrayL = [56, 498, 468, 278, 64, 179, 978, 213, 132, 97, 456];
+    minMax(testArrayL);
+    minMax([null]);
+    minMax([3]);
+
+    /*
+    11n
+    array
+    create a variable (objects) with results as properties.
+    If result doesn't have strings in array => push new property to object. If object already has strings from array as properties, increase count in obj.properties.
+
+    Do I need to create variable for counting properties or can I just ++ them?
+
+    result variable {
+      object1 : object1 count(variable),
+      object2 : object2 count(variable),
+      =//=
+    }
+    */
+
+    function countWords(words) {
+      const result = {};    
+      for (i = 0; i < words.length; i++) {
+        let injection= words[i];
+        if (!result[injection]) {
+          result[injection]= 1
+        } else {result[injection]++;}
+      }
+      console.log(result);
+      return result;
+    }
+
+    countWords(['banana', 'banana', 'banana', 'taracana', 'taracana', 'banana', 'banana', 'taracana', 'pie']);
+
+    
+  </script>
+</body>
+</html>

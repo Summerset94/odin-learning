@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <textarea></textarea>
+  <script>
+    //11 O
+    function stringSearch(stringArray)
+      {
+      for (i = 0; i <= stringArray.length; i++) {
+        if (stringArray[i] === 'search') {
+          console.log(`The word '${stringArray[i]}' is in ${i + 1} position`);
+          break;
+        } else if (i === stringArray.length) {
+          console.log('not found');
+        }
+      }
+    }
+
+    stringSearch(['Let', 'us', 'commence', 'a', 'search', 'for', 'a', 'word']);
+    stringSearch(['not', 'found']);
+
+    //11 Q
+    const uno = ['some', 'body', 'once', 'told', 'me'];
+    const dos = ['the', 'worlds', 'is', 'gonna', 'roll', 'me'];
+    
+    function findIndex(arrayTest, word) {
+      for (i = 0; i < arrayTest.length; i++) {
+        if (arrayTest[i] === word) {
+          console.log(`position = ${i}`);
+          break;
+        }
+      }
+    }
+    findIndex(uno, 'told');
+    findIndex(dos, 'roll');
+
+    //11 R
+    let basket = ['apple', 'egg', 'ham', 'dog', 'egg', 'Maurice', 'Wait. DOG?!', 'What is wrong with you?!', 'smore', 'egg', 'and another one!', 'egg', 'egg'];
+
+    function removeEgg(foods) {
+      let updFood = []
+      for (i = 0; i < foods.length; i++) {
+        if (foods[i] != 'egg') {
+          updFood.push(foods[i])
+        }
+      }
+      console.log(updFood);
+    }
+    removeEgg(basket);
+
+    //11 S
+    function removeTwoEggs(foods, product) {
+      let eggBan = [];
+      let count = 0;
+
+      for (i = 0; i < foods.length; i++) {
+        if (foods[i] === product) {
+          count++;
+          if (count <= 2) {continue;}
+
+          }
+        eggBan.push(foods[i]);
+      }
+      return eggBan;
+    }
+
+    removeTwoEggs(basket, 'egg');
+
+    //11 T
+    function removeLastTwo(foods, product) {
+      let result = [];
+      let count = 0;
+      let RevVar = foods.slice();
+      let tempVar = RevVar.reverse();
+
+      for (i = 0; i < tempVar.length; i++) {
+        if (tempVar[i] === product && count < 2) {
+          count++;
+          continue;
+          }
+        result.push(tempVar[i]);
+      }
+      return result.reverse();
+    }
+
+    //11 V
+    function fizzBuzz() {
+      let result = [];
+      for (let i = 0; i < 21; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+          result.push("FizzBuzz");
+        } else if (i % 3 === 0) {
+          result.push("Fizz");
+        } else if (i % 5 === 0) {
+          result.push("Buzz");
+        } else {
+          result.push(i);
+        }
+      }
+      console.log(result);
+      return result;
+    }
+    let testStuff = fizzBuzz();
+
+    //11 W
+    const tre = ['some', 'body', 'once', 'told', 'me'];
+    const quatro = ['the', 'worlds', 'is', 'gonna', 'roll', 'me'];
+    
+    function findString(array, word) {
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] === word) {
+          return i;
+            }
+          }
+
+      return -1;
+    }
+    
+    function unique(array){
+      let result = []
+      for (let i = 0; i < array.length; i++) {
+        let tempDump = array[i];
+        if (findString(result, tempDump) === -1) {
+          result.push(tempDump)
+          }
+        }
+      return result;
+    }
+
+    let testF = unique(basket);
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+   /*
+    function greet(name) {
+      if (!name) {
+        console.log(`Hi there!`);
+      } else {
+        console.log(`Hello, ${name}`);
+      }    
+    };
+
+    greet();
+
+    function conToF(celsius) {
+      fahTemp = ((celsius * 9 / 5) + 32);
+      return fahTemp;
+    };
+
+    function conToC(fahrenheit) {
+      celTemp = ((fahrenheit -32)*5/9);
+      return celTemp;
+    }
+
+    conToF(25);
+    conToC(86);
+    console.log(`The temperature is: ${fahTemp} Fahreneights and ${celTemp} degrees celsius`); */
+
+    function convertTemperature(degrees, unit) {
+      if (unit === 'C') {
+        result = ((degrees * 9 / 5) + 32)
+        degs = 'Fahrenheit';
+      } else if (unit === 'F') {
+        result = ((degrees -32)*5/9);
+        degs = 'Celsius';
+      }
+      return result, degs;
+    };
+
+    convertTemperature (100, 'C')
+
+    console.log(`It\'s ${result} in the measurment of ${degs} mah dudes!`);
+  </script>
+</body>
+</html>

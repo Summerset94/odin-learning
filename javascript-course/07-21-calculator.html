@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    button {
+      border-radius: 5px;
+      width: 30px;
+      height: 30px;
+      font-weight: bold;
+    }
+    p {
+      margin: 5px;
+    }
+    #clear, #equal {
+      width: 81px;
+    }
+
+    #calculus {
+      border-radius: 5px;
+      border: 1px solid black;
+      height: 15px;
+      width: 162px;
+      background-color: azure;
+    }
+  </style>
+</head>
+<body>
+  <p>
+    <button onclick="
+      updateCalculation('1');">1</button>
+    <button id='two'>2</button>
+    <button id='three'>3</button>
+    <button id='plus'>+</button>
+    <button id="minus">-</button>
+  </p>
+  <p>
+    <button id="four">4</button>
+    <button id="five">5</button>
+    <button id="six">6</button>
+    <button id="star">*</button>
+    <button id="divide">/</button>
+  </p>
+  <p>
+    <button id="seven">7</button>
+    <button id="eight">8</button>
+    <button id="nine">9</button>
+    <button id="zero">0</button>
+    <button id="dot">.</button>
+  </p>
+  <p>
+    <button id="clear">CLEAR</button>
+    <button id="equal">=</button>
+  </p>
+
+<span id="calculus"></span>
+
+
+  
+</body>
+<script>
+  let button = "";
+  let calculation = ''; 
+  let calcResult = document.getElementById('calculus');
+
+  document.getElementById('two').addEventListener("click", () => updateCalculation('2'));
+  document.getElementById('three').addEventListener("click", () => updateCalculation('3'));
+  document.getElementById('plus').addEventListener("click", () => updateCalculation(' + '));
+  document.getElementById('minus').addEventListener("click", () => updateCalculation(' - '));
+
+  document.getElementById('four').addEventListener("click", () => updateCalculation('4'));
+  document.getElementById('five').addEventListener("click", () => updateCalculation('5'));
+  document.getElementById('six').addEventListener("click", () => updateCalculation('6'));
+  document.getElementById('star').addEventListener("click", () => updateCalculation(' * '));
+  document.getElementById('divide').addEventListener("click", () => updateCalculation(' / '));
+  document.getElementById('seven').addEventListener("click", () => updateCalculation('7'));
+  document.getElementById('eight').addEventListener("click", () => updateCalculation('8'));
+  document.getElementById('nine').addEventListener("click", () => updateCalculation('9'));
+  document.getElementById('zero').addEventListener("click", () => updateCalculation('0'));
+  document.getElementById('dot').addEventListener("click", () => updateCalculation('.'));
+  
+  document.getElementById('clear').addEventListener("click", Clear);
+    function Clear() {
+      calculation = '';
+      calcResult.textContent = `${calculation}`;
+      return calculation;
+    }
+  
+    document.getElementById('equal').addEventListener('click', Equation);
+    function Equation() {
+      calculation = eval(calculation);
+      calcResult.textContent = `${calculation}`;
+      return calculation;
+    }
+
+  function updateCalculation(button) {
+    calculation =  calculation + button ;
+    calcResult.textContent = `${calculation}`;
+    return calculation;
+    }
+
+</script>
+</html>

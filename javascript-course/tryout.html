@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Cart Quantity</h1>
+  <button id="ttlqtty">Show Quantity</button>
+  <button id="addone">Add to Cart</button>
+  <button id="addtwo">+2</button>
+  <button id="addthree">+3</button>
+  <button id="addfour">+4</button>
+  <button id="addfive">+5</button>
+  <button id="removeone">Remove from cart</button>
+  <button id="removetwo">Remove two items</button>
+  <button id="resetcart">Reset Cart</button>
+</body>
+
+<script>
+  var qtty = 0;
+  document.getElementById('ttlqtty').addEventListener("click", totalCart);
+
+  function totalCart() {
+    console.log('Total Quantity: ' + qtty);
+  }
+
+  document.getElementById('addone').addEventListener('click', addOne); 
+  function addOne() {
+    qtty ++; 
+      console.log(`Total Quantity: ${qtty}`);
+  }
+
+  document.getElementById('addtwo').addEventListener('click', addTwo); 
+    function addTwo() {
+      qtty += 2; 
+      console.log(`Total Quantity: ${qtty}`);
+  }
+
+  document.getElementById('addthree').addEventListener('click', addThree); 
+    function addThree() {
+      qtty += 3; 
+      console.log(`Total Quantity: ${qtty}`);
+  }
+ 
+  document.getElementById('resetcart').addEventListener('click', resetCart);
+    function resetCart() {
+      qtty = 0;
+      console.log('Cart was reset');
+      console.log(`Cart Quantity: ${qtty}`)
+
+    }
+
+    document.getElementById('addfour').addEventListener('click', addFour); 
+    function addFour() {
+      qtty += 4; 
+      console.log(`Total Quantity: ${qtty}`);
+  }
+
+  document.getElementById('addfive').addEventListener('click', addFive); 
+    function addFive() {
+      qtty += 5; 
+      console.log(`Total Quantity: ${qtty}`);
+  }
+
+  document.getElementById('removeone').addEventListener('click', removeOne); 
+    function removeOne() {
+      qtty --; 
+      console.log('Item removed');
+      console.log(`Total Quantity: ${qtty}`);
+  }
+
+  document.getElementById('removetwo').addEventListener('click', removeTwo); 
+    function removeTwo() {
+      qtty -= 2; 
+      console.log('Items removed');
+      console.log(`Total Quantity: ${qtty}`);
+  }
+</script>
+</html>

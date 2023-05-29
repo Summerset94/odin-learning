@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let flip1 = Math.random();
+  let result1 = ''
+
+  if (flip1 < 0.5) {
+    result1 = 'heads';
+  } else {
+    result1 = 'tails'
+  }
+
+  let guess1 = 'heads'
+
+  console.log(`Computar has chosen ${result1}`)
+
+  if (guess1 == result1) {
+    console.log('You win');
+  }
+  else {
+    console.log('You lose');
+}
+
+</script>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Some message stuff</title>
+</head>
+<body>
+  <button class="butn changeMe">Start</button>
+  <button class="butn changeMeDelay">Start</button> 
+  <button class="butn addPopup">Add To Cart</button>
+  <button class="butn popRefresh">Add To Cart</button> 
+  <div class="popUpMessage"></div>
+  <br>
+  <button class="addcount">Add</button>
+  <button class="removecount">Remove</button>
+  <script>
+    //12 A
+
+    let add = function() {
+      console.log(2 + 3);
+    }
+
+    //12 B
+    function runTwice(fun) {
+      fun();
+      fun();
+    }
+
+    //12 C
+    document.querySelector('.changeMe').addEventListener('click', () => {
+      const button = document.getElementsByClassName('butn')[0]
+      setTimeout(() => {
+        button.innerHTML = 'Changed'}, 1000);
+    });
+
+    //12 D 
+    document.querySelector('.changeMeDelay').addEventListener('click', () => {
+      const button = document.getElementsByClassName('butn')[1];
+      button.innerHTML = 'Loading';
+      setTimeout(() => {
+        button.innerHTML = 'Finished'}, 1000);
+    });
+
+    //12 E
+    document.querySelector('.addPopup').addEventListener('click', () => {
+      const message = document.getElementsByClassName('popUpMessage')[0];
+        setTimeout(() => {
+        message.innerHTML = ''}, 2 * 1000);
+
+      message.innerHTML = 'Added';
+    });
+    
+    //12 F
+    let timeid;
+    document.querySelector('.popRefresh').addEventListener('click', () => {
+      const message = document.getElementsByClassName('popUpMessage')[0];
+      message.innerHTML = 'Added';
+
+      clearTimeout(timeid);
+
+      timeid = setTimeout(() => {
+        message.innerHTML = ''}, 2 * 1000);      
+    });
+    
+
+    //12 G, H, i
+
+    let switchTitle = document.getElementsByTagName('title')[0];
+    let messageCount = 0;
+    let switcheroo;
+
+    document.querySelector('.addcount')
+      .addEventListener('click', () => {msgСount(1);});
+    document.querySelector('.removecount')
+      .addEventListener('click', () => {msgСount(0);});  
+
+    function msgСount(button) {
+      if (button === 1)  {
+        messageCount++;
+        if (!switcheroo) {switcheroo = setInterval(testStuff, 1000);
+        }
+        }
+       else if (button === 0) {
+          if (messageCount > 0) {
+            messageCount--;
+            if (!switcheroo) {switcheroo = setInterval(testStuff, 1000);
+            }
+          }
+          if (messageCount === 0) {
+            killSwitch();
+          }
+        }
+        return messageCount;
+    }
+     
+      function testStuff() {
+        if (switchTitle.innerHTML === 'App') {
+          switchTitle.innerHTML = `(${messageCount}) new Messages`;
+      } else {switchTitle.innerHTML = `App`;}
+      }
+
+      function killSwitch() {
+        clearInterval(switcheroo);
+        switchTitle.innerHTML = 'App';
+      };
+  </script>
+</body>
+</html>

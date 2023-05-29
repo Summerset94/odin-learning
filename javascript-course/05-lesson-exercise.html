@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variables lesson exercises</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let name = 'Tony';
+  console.log(`My name is ${name}`);
+  const coffee = 5;
+  const bagel = 3;
+  const soup = 9;
+  let cost = coffee + 3 * bagel + soup;
+  console.log(`Cost of food: $${cost}`);
+  let tax = cost  / 100 * 10;
+  console.log(`Tax (10%): $${tax.toFixed(2)}`)
+  let totalCost = cost + tax;
+  console.log(`Total cost: $${totalCost.toFixed(2)}`)
+</script>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced functions</title>
+</head>
+<body>
+  <button onclick="" class="js-button">Click</button>
+  <script>
+/*
+    const buttonElement = document.querySelector('.js-button');
+
+    const eventListener = () =>{
+      console.log('click');
+    };
+    buttonElement.addEventListener('click', eventListener);
+
+    buttonElement.removeEventListener('click', eventListener);
+
+    buttonElement.addEventListener('click', () =>{
+      console.log('click2');
+    });
+*/
+/*    function greeting() {
+      console.log('hello');
+    }
+
+    greeting();
+
+    const num = 2;
+    const function1 = function() {
+      console.log('hello2')
+    };
+
+    console.log(function1);
+    console.log(typeof function1);
+    function1();
+
+    const object1 = {
+      num: 2,
+      fun: function greeting() {
+        console.log('hello 3');
+      }
+    };
+
+    object1.fun();
+
+    function display(param) {
+      console.log(param);
+    }
+
+    display(2);
+
+    function run(param) {
+      param();
+    }
+    run(function () {
+      console.log('hello4')
+    });
+*/
+/*
+      setTimeout(function() {
+        console.log('timeout');
+        console.log('timeout2');
+      }, 3000);
+
+      console.log('next line');
+
+      setInterval(function(){
+        console.log('interval')
+      }, 3000);
+
+      console.log('next line 2');
+*/
+      // another way for loop through an array
+
+      /*
+
+      ['make dinner', 'wash dishes', 'watch youtube'].forEach((value, index) => {
+        if (value === 'wash dishes') {
+          return;
+        }
+
+        console.log(index);
+        console.log(value);
+      });
+
+      const regularFunction = function(param, param2) {
+        console.log('hello');
+        return 5;
+      }
+
+      const arrowfunction = (param, param2) => {
+        console.log('hello');
+        return 5;
+      };
+      arrowFunction();
+
+      // in arrowfunction if you have only 1 parameter, brackets are optional:
+      const oneParam = param => {
+        console.log(param + 1)
+      };
+      oneParam(2);
+      // if arrowfunction have only one line, 'return' and curly brackets are optional
+      const oneLine = () => 2 + 3;
+      console.log(oneLine());
+
+      // Shorthand for functions inside objects
+      const object2 = {
+        method: () => {
+
+        },
+        method() {
+
+        }
+      };
+*/
+      [1, -3, 5].filter((value, index) => 
+      {
+/*        if(value >= 0) {
+          return true
+        } else {
+          return false
+          }
+        */  
+        return value >= 0;
+      });
+
+      [1, 1, 3].map((value, index) => {
+        return value + 10;
+      });
+
+      [1, 1, 3].map(value  => value + 10);
+
+      
+    </script>
+</body>
+</html>

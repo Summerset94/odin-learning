@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    // Define the game board size
+const boardSize = 4;
+
+// Create an empty game board
+const board = Array.from({ length: boardSize }, () => Array(boardSize).fill(0));
+
+// Function to display the game board
+function displayBoard() {
+  for (let row = 0; row < boardSize; row++) {
+    for (let col = 0; col < boardSize; col++) {
+      process.stdout.write(board[row][col] + "\t");
+    }
+    process.stdout.write("\n");
+  }
+}
+
+// Function to add a new tile to the board
+function addNewTile() {
+  // Find an empty spot on the board
+  const emptySpots = [];
+  for (let row = 0; row < boardSize; row++) {
+    for (let col = 0; col < boardSize; col++) {
+      if (board[row][col] === 0) {
+        emptySpots.push({ row, col });
+      }
+    }
+  }
+
+  // Randomly select an empty spot
+  if (emptySpots.length > 0) {
+    const { row, col } = emptySpots[Math.floor(Math.random() * emptySpots.length)];
+    // Place a new tile (either 2 or 4) in the empty spot
+    board[row][col] = Math.random() < 0.9 ? 2 : 4;
+  }
+}
+
+// Initialize the game board
+addNewTile();
+addNewTile();
+
+// Display the initial game board
+displayBoard();
+  </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RPS</title>
+  <script>
+
+  </script>
+</head>
+<body>
+  <h2>Камінь, ножиці, папір. Ultra Mega Anniversary Legendary Game Of The Year Collectors Golden Platinum Special Legendary Heroic Limited Edition</h2>
+  <button onclick="
+  const randomNumber = Math.random();
+   if (randomNumber >= 0 && randomNumber < 1/3) {
+        winStat ++ ;
+        rollResult.textContent = 'Ви виграли! Комп\'ютер обрав ножиці.' ;
+        yay.textContent = `${winStat}`;
+   } else if (randomNumber >= 1/3 && randomNumber < 2/3) {
+        loseStat ++ ;
+        rollResult.textContent = 'Ви програли! Комп\'ютер обрав папір.' ;
+        ugh.textContent = `${loseStat}`;
+   } else { 
+        tieStat ++ ;
+        rollResult.textContent = 'Овва! нічия! Комп\'ютер теж обрав камінь'
+        meh.textContent = `${tieStat}`;
+   }
+  ">Камінь</button>
+
+  <button onclick="
+  const randomNumber2 = Math.random();
+   if (randomNumber2 >= 0 && randomNumber2 < 1/3) {
+        winStat ++ ;
+        rollResult.textContent = 'Ви виграли! Комп\'ютер обрав камінь.' ;
+        yay.textContent = `${winStat}`;
+   } else if (randomNumber2 >= 1/3 && randomNumber2 < 2/3) {
+        loseStat ++ ;
+        rollResult.textContent = 'Ви програли! Комп\'ютер обрав ножиці.' ;
+        ugh.textContent = `${loseStat}`;
+   } else { 
+        tieStat ++ ;
+        rollResult.textContent = 'Овва! нічия! Комп\'ютер теж обрав папір'
+        meh.textContent = `${tieStat}`;
+   }
+  ">Папір</button>
+
+  <button onclick="
+  const randomNumber3 = Math.random();
+   if (randomNumber3 >= 0 && randomNumber3 < 1/3) {
+        winStat ++ ;
+        rollResult.textContent = 'Ви виграли! Комп\'ютер обрав папір.' ;
+        yay.textContent = `${winStat}`;
+   } else if (randomNumber3 >= 1/3 && randomNumber3 < 2/3) {
+        loseStat ++ ;
+        rollResult.textContent = 'Ви програли! Комп\'ютер обрав камінь.' ;
+        ugh.textContent = `${loseStat}`;
+   } else { 
+        tieStat ++ ;
+        rollResult.textContent = 'Овва! нічия! Комп\'ютер теж обрав ножиці'
+        meh.textContent = `${tieStat}`;
+   }
+  ">Ножиці</button>
+  <br>
+  <button onclick="
+    winStat = '';
+    loseStat = '';
+    tieStat = '';
+    yay.textContent = `${winStat}`;
+    ugh.textContent = `${loseStat}`;
+    meh.textContent = `${tieStat}`;
+  ">Скинути результати</button>
+
+  <p>Результат: <span id="rollresult"></span></p>
+  <p>Перемоги: <span id="wincount"></span> <br>
+    Зради: <span id="losecount"></span> <br>
+    Зрадомоги: <span id="tiecount"></span> </p>
+
+
+
+</body>
+
+<!--
+  прописати 3 варіанти для кожної кнопки
+  кнопка для скидання рахунку
+  кожна кнопка додає один з трьох варіантів для третин
+  перемінні для результатів 
+-->
+
+<script>
+  let winStat = '';
+  let loseStat = '';
+  let tieStat = '';
+  let rollResult = document.getElementById('rollresult');
+  let yay = document.getElementById('wincount');
+  let ugh = document.getElementById('losecount');
+  let meh = document.getElementById('tiecount');
+</script>
+</html>

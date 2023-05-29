@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex 1 made by me</title>
+</head>
+<body>
+  <!-- It doesn't work BTW. I dunno how to get inputs from stuff-->
+  <h4>YouTube Subscribe Button</h4>
+  <p><button id="js-ytsub">Subscribe</button></p>
+  
+  <p>Rock Paper Scissors</p><br>
+  <a href="08-1-RPS.html" target="_blank">Click here</a>
+
+  <p>Amazon Shipping Calculator <br>
+  Order under $40 have $10 shipping fee <br>
+  Orders over $40 include free shipping</p>
+  <p><input  type='text' id="order-input" placeholder="Cost of order"
+    onkeydown="console.log(event.key)"> 
+    <button id="js-ship-calc" onclick="
+  calcPrice">Calculate</button> <br>
+  <span id="order-total"></span></p>
+  
+  <script>
+    const subButton = document.querySelector('#js-ytsub');
+    subButton.addEventListener ("click", updateButton);
+      function updateButton() {
+        subButton.textContent = 'Subscribed'; 
+      }
+
+      
+    function calcPrice() {
+
+    const costCalc = document.querySelector('#order-input');
+
+      let cost = Number(costCalc.value);
+      
+      if (cost < 40) {
+        cost += 10;
+      }
+      
+      document.querySelector('#order-total')
+        .innerHTML = `$${cost}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+</head>
+<body>
+  
+</body>
+
+<script>
+  /*
+ function function1() {
+  console.log('hello');
+  console.log(2+2); 
+}
+
+function1();
+*/
+
+// the number 0.1 after equality sign is for setting a default value for parameter
+function calculateTax(cost, taxPercent = 0.1) {
+  console.log(cost * taxPercent);
+}
+
+let uaTax = 0.2;
+calculateTax(2000, 0.2);
+calculateTax(5000, uaTax ) ;
+let totalOrder = 500 + 700 + 1200 + 300;
+calculateTax(totalOrder, uaTax);
+
+
+
+
+/*
+Sometimes my genius generates gravity. That's not the situation here
+Рандомно підставляє параметри на основі генератора випадкових чисел, підставляє ці параметри у функцію і пише результат.
+
+let person = {
+  name: '',
+  age: '',
+  target: '',
+};
+
+const info1 = Math.random();
+if (info1 >= 0 && info1 < 1/3) {
+        person.name = 'Gary';
+   } else if (info1 >= 1/3 && info1 < 2/3) {
+    person.name = 'Shery';
+   } else { 
+    person.name = 'Terry';
+   };
+
+const info2 = Math.random();
+if (info2 >= 0 && info2 < 1/3) {
+        person.age = 14;
+   } else if (info2 >= 1/3 && info2 < 2/3) {
+    person.age = 16;
+   } else { 
+    person.age = 17;
+   }
+
+const info3 =  Math.random();
+if (info3 >= 0 && info3 < 1/3) {
+        person.target = 'sister';
+   } else if (info3 >= 1/3 && info3 < 2/3) {
+    person.target = 'Bob';
+   } else { 
+    person.target = 'Tree';
+   }
+
+   function ultimateBully(name, age, target) {
+  console.log('Oh, look how stupid ' + name + ' is! Only '+ age + ' years old, and already kissed a ' + target +'. What a gay!');
+}
+
+ultimateBully(person.name, person.age, person.target)
+*/
+</script>
+</html>
