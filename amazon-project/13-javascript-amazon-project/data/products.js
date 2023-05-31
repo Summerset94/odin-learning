@@ -656,5 +656,37 @@ const products = [
       "apparel",
       "mens"
     ]
+  },
+  {
+    id: "1kn0w1k0w1337",
+    image: "images/products/plumbus.png",
+    name: "Plumbus by R&M co.",
+    rating: {
+      stars: 5,
+      count: 6166
+    },
+    priceCents: 4250,
+    keywords: [
+      "Plumbus",
+      "plumbis",
+      "aplumb",
+      "homeware"
+    ]
+  },
+  {
+    id: "53x15tu44",
+    image: "images/products/coding-socks.jpg",
+    name: "Men's all season coding socks",
+    rating: {
+      stars: 5,
+      count: 9999
+    },
+    priceCents: 650,
+    keywords: [
+      "mens",
+      "legwear",
+      "manly",
+      "socks"
+    ]
   }
 ];
