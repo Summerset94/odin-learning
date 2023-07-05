@@ -2,10 +2,11 @@
 let myLibrary = [];
 
 //Book object
-function Book(title, author, length) {
+function Book(title, author, length, year) {
   this._title = title;
   this._author = author;
   this._length = length;
+  this._published = year;
   this._status = "Not read yet";
 }
 
@@ -35,6 +36,17 @@ Book.prototype.getStatus = function() {
   return this._status;
 };
 
+Book.prototype.switchStatus = function() {
+  switch (this._status) {
+    case "Not read yet":
+      this._status = "Completed";
+      break;
+    case "Completed":
+      this._status = "Not read yet";
+      break;
+  }
+};
+
 //adds a book to the library
 function addBookToLibrary(title, author, length) {
 
@@ -46,6 +58,15 @@ function sortBy(property) {
   myLibrary.sort((a, b) => a[property].localeCompare(b[property]));
   displayBooks();
 };
+
+/* this is copy of sorting function. But in descending order.
+
+function sortBy(property) {
+  myLibrary.sort((a, b) => b[property].localeCompare(a[property]));
+  displayBooks();
+};
+
+*/
 
 
 //displaying books. Basic. nned more advanced code to put this in.
@@ -61,7 +82,10 @@ function displayBooks() {
       <div class="authorTile">${x.getAuthor()}</div>
       <div class="titleTile">${x.getTitle()}</div>
       <div class="lengthTile">${x.getLength()}</div>
-      <div class="statusTile">${x.getStatus()}</div>      
+      <div class="publishedTile">${x._published}</div>
+      <div class="statusTile">${x.getStatus()}</div>
+      <button onclick="deleteElementById('book-${index}')">Delete</button>
+      <button onclick="${x.switchStatus()}">Switch status</button>      
       `
     cardsArea.append(tile);
   }))
@@ -88,11 +112,25 @@ addNewBook.addEventListener('click', () => {
   let newTitle = titleHook.value; 
   let lengthHook = document.querySelector('#length');
   let newLength = lengthHook.value;
+  let publishedHook = document.querySelector('#dateOfPublish');
+  let newPublishDate = publishedHook.value;
 
-  addBookToLibrary(newTitle, newAuthor, newLength);
+  addBookToLibrary(newTitle, newAuthor, newLength, newPublishDate);
   displayBooks();
 
   authorHook.value = '';
   titleHook.value = '';
   lengthHook.value = '';
 });
+
+function deleteElementById(elementId) {
+  const element = document.getElementById(elementId);
+  if (element) {
+    element.remove();
+  }
+}
+
+// just a tweak that we can't make Year of publishing higher than current year
+const yearInput = document.getElementById("dateOfPublish");
+const currentYear = new Date().getFullYear();
+yearInput.setAttribute("max", currentYear);
