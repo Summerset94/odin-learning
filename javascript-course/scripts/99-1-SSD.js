@@ -45,3 +45,14 @@ function tickTock() {
 }
 
 // Should've put HTML sec/min/hour fetches into separate variables and call to them by %variableName%.innerHTML instead of querySelector every time;
+
+const rolld20 = document.querySelector('.rollresult');
+
+function rollThe20() {
+  let computerRoll = Math.floor(Math.random() * 20 + 1);
+    if (computerRoll === 1) {
+      rolld20.innerHTML = `Отета ти ЛОХ. Лови ${computerRoll}`
+    } else {rolld20.innerHTML = `Ви викинули ${computerRoll}`}
+}
+
+document.querySelector('.rolld20').addEventListener('click', () => {rollThe20()});

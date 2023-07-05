@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/library.css">
+  <script defer src="scripts/library.js"></script>
+  <title>Library</title>
+</head>
+<body>
+  <!--User-input area-->
+  <fieldset class="newBookField">
+    <label for="author">Author:</label>
+    <input type="text" name="author" id="author" />
+
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" />
+
+    <label for="length">Length (pages):</label>
+    <input type="number" name="length" id="length" />
+
+    <button class="js-addBookBtn">Add to library</button>
+  </fieldset>
+
+  <!--sorting  area-->
+    <fieldset class="sortField">
+      <p>Sort by:</p>
+      <button class="js-authorSort">Author</button>
+      <button class="js-titleSort">Title</button>
+    </fieldset>  
+
+  <!--That's an area where the books go-->
+  <div class="libCards"></div>
+</body>
+</html>

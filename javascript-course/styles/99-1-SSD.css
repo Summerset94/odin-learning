@@ -29,3 +29,8 @@ button:active {
   padding-top: 5px;
   padding-bottom:5px;
 }
+
+.dice-image {
+  height: 100px;
+  width: 85px;
+}

@@ -1,0 +1,94 @@
+let myLibrary = [];
+
+function Book(title, author, length) {
+  this._title = title;
+  this._author = author;
+  this._length = length;
+  this._status = "Not read yet";
+}
+
+// set us up some methods.
+
+Book.prototype.setStatus = function(status) {
+  this._status = status;
+}
+
+Book.prototype.info = function() {
+  return `${this._title} by ${this._author}, ${this._length}, ${this._status}.`;
+};
+
+Book.prototype.getAuthor = function() {
+  return this._author;
+};
+
+Book.prototype.getTitle = function() {
+  return this._title;
+};
+
+Book.prototype.getLength = function() {
+  return `${this._length} pages`;
+};
+
+Book.prototype.getStatus = function() {
+  return this._status;
+};
+
+function addBookToLibrary(title, author, length) {
+  //adds a book to the library
+  myLibrary.push(new Book(title, author, length)); 
+}
+
+// sorting the library alphabetically. X can be author or a title.
+function sortByAuthor() {
+  myLibrary.sort((a, b) => a._author.localeCompare(b._author));
+  displayBooks();
+};
+
+function sortByTitle() {
+  myLibrary.sort((a, b) => a._title.localeCompare(b._title));
+  displayBooks();
+}
+
+const cardsArea = document.querySelector('.libCards');
+
+function displayBooks() {
+  cardsArea.innerHTML = '';
+  myLibrary.forEach(((x, index) => {
+    let tile = document.createElement("div");
+    let uniqueId = `book-${index}`;    
+    tile.id = uniqueId;   
+    tile.innerHTML = `
+      <div class="authorTile">${x.getAuthor()}</div>
+      <div class="titleTile">${x.getTitle()}</div>
+      <div class="lengthTile">${x.getLength()}</div>
+      <div class="statusTile">${x.getStatus()}</div>      
+      `
+    cardsArea.append(tile);
+  }))
+};
+
+// Making our buttons do things.
+const autorSortBtn = document.querySelector('.js-authorSort');
+const titleSortBtn = document.querySelector('.js-titleSort');
+
+autorSortBtn.addEventListener('click', () => {
+  sortByAuthor();
+});
+
+titleSortBtn.addEventListener('click', () => {
+  sortByTitle();
+});
+
+const addNewBook = document.querySelector('.js-addBookBtn');
+
+addNewBook.addEventListener('click', () => {
+  let authorHook = document.querySelector('#author');
+  let newAuthor = authorHook.value;
+  let titleHook = document.querySelector('#title');
+  let newTitle = titleHook.value; 
+  let lengthHook = document.querySelector('#length');
+  let newLength = lengthHook.value;
+
+  addBookToLibrary(newTitle, newAuthor, newLength);
+  displayBooks();
+});
