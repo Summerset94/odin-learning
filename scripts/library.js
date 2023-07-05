@@ -42,15 +42,11 @@ function addBookToLibrary(title, author, length) {
 }
 
 // sorting the library
-function sortByAuthor() {
-  myLibrary.sort((a, b) => a._author.localeCompare(b._author));
+function sortBy(property) {
+  myLibrary.sort((a, b) => a[property].localeCompare(b[property]));
   displayBooks();
 };
 
-function sortByTitle() {
-  myLibrary.sort((a, b) => a._title.localeCompare(b._title));
-  displayBooks();
-}
 
 //displaying books. Basic. nned more advanced code to put this in.
 const cardsArea = document.querySelector('.libCards');
@@ -76,11 +72,11 @@ const autorSortBtn = document.querySelector('.js-authorSort');
 const titleSortBtn = document.querySelector('.js-titleSort');
 
 autorSortBtn.addEventListener('click', () => {
-  sortByAuthor();
+  sortBy("_author");
 });
 
 titleSortBtn.addEventListener('click', () => {
-  sortByTitle();
+  sortBy("_title");
 });
 
 const addNewBook = document.querySelector('.js-addBookBtn');
