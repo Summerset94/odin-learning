@@ -1,5 +1,7 @@
+// Here's the library array
 let myLibrary = [];
 
+//Book object
 function Book(title, author, length) {
   this._title = title;
   this._author = author;
@@ -33,12 +35,13 @@ Book.prototype.getStatus = function() {
   return this._status;
 };
 
+//adds a book to the library
 function addBookToLibrary(title, author, length) {
-  //adds a book to the library
+
   myLibrary.push(new Book(title, author, length)); 
 }
 
-// sorting the library alphabetically. X can be author or a title.
+// sorting the library
 function sortByAuthor() {
   myLibrary.sort((a, b) => a._author.localeCompare(b._author));
   displayBooks();
@@ -49,6 +52,7 @@ function sortByTitle() {
   displayBooks();
 }
 
+//displaying books. Basic. nned more advanced code to put this in.
 const cardsArea = document.querySelector('.libCards');
 
 function displayBooks() {
@@ -91,4 +95,8 @@ addNewBook.addEventListener('click', () => {
 
   addBookToLibrary(newTitle, newAuthor, newLength);
   displayBooks();
+
+  authorHook.value = '';
+  titleHook.value = '';
+  lengthHook.value = '';
 });
