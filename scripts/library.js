@@ -69,7 +69,7 @@ function sortBy(property) {
 */
 
 
-//displaying books. Basic. nned more advanced code to put this in.
+//displaying books. Basic. need more advanced code to put this in.
 const cardsArea = document.querySelector('.libCards');
 
 function displayBooks() {

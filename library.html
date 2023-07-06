@@ -5,35 +5,49 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/library.css">
+  <script src="https://kit.fontawesome.com/34116f3a29.js" crossorigin="anonymous"></script>
   <script defer src="scripts/library.js"></script>
   <title>Library</title>
 </head>
 <body>
+  <header>
+    <h1>My Library</h1>
+  </header>
   <!--User-input area-->
-  <fieldset class="newBookField">
-    <label for="author">Author:</label>
-    <input type="text" name="author" id="author" />
+  <main>
+    <div class="technical">
+      <fieldset class="newBookField">
+        <label for="author">Author:</label>
+        <input type="text" name="author" id="author" />
+    
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" />
+    
+        <label for="length">Length (pages):</label>
+        <input type="number" name="length" id="length" />
+    
+        <label for="dateOfPublish">Published (year):</label>
+        <input type="number" min="0" max="" id="dateOfPublish">
+    
+        <button class="js-addBookBtn">Add to library</button>
+      </fieldset>
+    
+      <!--sorting  area-->
+        <fieldset class="sortField">
+          <p>Sort by:</p>
+          <button class="js-authorSort">Author</button>
+          <button class="js-titleSort">Title</button>
+        </fieldset>
+    </div>
+      
+  
+    <!--That's an area where the books go-->
+    <div class="libCards"></div>
+  </main>
+  
 
-    <label for="title">Title:</label>
-    <input type="text" name="title" id="title" />
-
-    <label for="length">Length (pages):</label>
-    <input type="number" name="length" id="length" />
-
-    <label for="dateOfPublish">Published (year):</label>
-    <input type="number" min="0" max="" id="dateOfPublish">
-
-    <button class="js-addBookBtn">Add to library</button>
-  </fieldset>
-
-  <!--sorting  area-->
-    <fieldset class="sortField">
-      <p>Sort by:</p>
-      <button class="js-authorSort">Author</button>
-      <button class="js-titleSort">Title</button>
-    </fieldset>  
-
-  <!--That's an area where the books go-->
-  <div class="libCards"></div>
+  <div class="disclaimer">
+    Photo by <a href="https://unsplash.com/@enginakyurt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">engin akyurt</a> on <a href="https://unsplash.com/photos/HEMIBJ8QQuA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>  
+  </div>
 </body>
 </html>
