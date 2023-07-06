@@ -10,6 +10,9 @@
 :root{
   --text-white: rgba(255, 255, 255, 0.932);
   --bg-green-opaque: rgba(16, 43, 23, 0.911);
+  --bg-burnt: #8a33249a;
+  --bg-burnt2: #8a3324e8;
+
 }
 
 body {
@@ -40,7 +43,7 @@ main {
   width: 20%;
   background-color: var(--bg-green-opaque);
   justify-content: flex-start;
-  height: calc(100vh - 100px);
+  height: max(max-content, calc(100vh - 100px));
 }
 
 .newBookField, .sortField {
@@ -58,6 +61,7 @@ label, fieldset > p {
   padding: 3px 0;
   font-size: 1.3rem;
   border: none;
+  text-align: center;
 }
 
 input, button {
@@ -65,16 +69,23 @@ input, button {
   margin: 5px 0;
   border-radius: 10px;
   padding: 2px;
+  text-align: center;
 }
 
 .disclaimer {
   background-color: var(--bg-green-opaque);
   color: var(--text-white);
   text-align: center;
+  height: 20px;
+  font-size: 0.6rem;
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
 }
 
 .disclaimer > a {
-  color:var(--text-white)
+  color:var(--text-white);
+  font-size: 0.6rem;
 }
 
 .disclaimer > a:hover {
@@ -91,16 +102,94 @@ input, button {
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: auto;
   width: 79.25%;
-  height: calc(100vh - 110px);
+  height:calc(100vh - 100px);
   overflow-y: scroll;
   margin: 5px 0;
 }
 
 .libCards > div {
-  border: 3px solid gray;
+  border: 4px solid gray;
   border-radius: 8px;
   padding: 10px;
   background: var(--text-white);
   box-shadow: rgb(22, 22, 22) 5px 5px, rgba(37, 37, 37, 0.3) 10px 10px, rgba(0, 0, 0, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(0, 0, 0, 0.05) 25px 25px;
   margin: 20px;
+  height: min-content;
+  background-image: url('../images/legit-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+.catTile {
+  background-color: var(--bg-burnt) ;
+  padding: 4px;
+  width: fit-content;
+  margin: 5px;
+  font-family: 'Times New Roman', Times, serif;
+  border: none;
+  font-weight: 500;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.95px 2.95px 2.6px;
+  border-radius: 3px;  
+}
+
+.tileButton {
+  background-color: var(--bg-burnt);
+  text-decoration: underline;
+  width: min(40% fit-content);
+  box-shadow: rgba(0, 0, 0, 0.15) 2.95px 2.95px 2.6px;
+}
+
+.tileButton:hover, button:hover {
+  transform: scale(103%);
+}
+
+button:active {
+  transform: scale(97%);
+}
+
+.tileButton:active {
+  background-color: var(--bg-burnt2);
+}
+
+@media screen and (max-width: 600px) {
+
+  * {
+    font-size: 15px;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    height: 50px;
+  }
+
+  header > h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  .technical {
+    width: 100%;
+  }
+  
+  .disclaimer {
+    position:initial;
+  }
+
+  .libCards {
+    display: flex;
+    flex-direction:column;
+    width: 100%;
+    height: fit-content;    
+  }
 }

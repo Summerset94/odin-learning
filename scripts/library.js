@@ -2,12 +2,24 @@
 let myLibrary = [];
 
 //Book object
-function Book(title, author, length, year) {
+function Book(title = "Unknown", author = "Unknown", length = "unknown", year) {
   this._title = title;
   this._author = author;
   this._length = length;
   this._published = year;
   this._status = "Not read yet";
+  
+  this.switchStatus = function() {
+    switch (this._status) {
+      case "Not read yet":
+        this._status = "Completed";
+        break;
+      case "Completed":
+        this._status = "Not read yet";
+        break;
+    }
+    displayBooks();
+  };
 }
 
 // set us up some methods.
@@ -29,28 +41,21 @@ Book.prototype.getTitle = function() {
 };
 
 Book.prototype.getLength = function() {
-  return `${this._length} pages`;
+  return `${this._length}`;
 };
 
 Book.prototype.getStatus = function() {
   return this._status;
 };
 
-Book.prototype.switchStatus = function() {
-  switch (this._status) {
-    case "Not read yet":
-      this._status = "Completed";
-      break;
-    case "Completed":
-      this._status = "Not read yet";
-      break;
-  }
+Book.prototype.getPublished = function() {
+  return this._published;
 };
 
 //adds a book to the library
-function addBookToLibrary(title, author, length) {
+function addBookToLibrary(title, author, length, year) {
 
-  myLibrary.push(new Book(title, author, length)); 
+  myLibrary.push(new Book(title, author, length, year)); 
 }
 
 // sorting the library
@@ -79,13 +84,21 @@ function displayBooks() {
     let uniqueId = `book-${index}`;    
     tile.id = uniqueId;   
     tile.innerHTML = `
-      <div class="authorTile">${x.getAuthor()}</div>
-      <div class="titleTile">${x.getTitle()}</div>
-      <div class="lengthTile">${x.getLength()}</div>
-      <div class="publishedTile">${x._published}</div>
-      <div class="statusTile">${x.getStatus()}</div>
-      <button onclick="deleteElementById('book-${index}')">Delete</button>
-      <button onclick="${x.switchStatus()}">Switch status</button>      
+      <div class="catTile">${x.getAuthor()}</div>
+
+      <div class="catTile">${x.getTitle()}</div>
+
+      <div class="catTile">Length, pages: ${x.getLength()}</div>
+
+      <div class="catTile">Published: ${x.getPublished()}</div>
+
+      <div class="catTile">Progress: ${x.getStatus()}</div>
+
+      <button class="tileButton" onclick="deleteElementById('book-${index}')">Delete</button>
+
+      <button class="tileButton" onclick="myLibrary[${index}].switchStatus()">
+        Switch status
+      </button>      
       `
     cardsArea.append(tile);
   }))
@@ -113,7 +126,7 @@ addNewBook.addEventListener('click', () => {
   let lengthHook = document.querySelector('#length');
   let newLength = lengthHook.value;
   let publishedHook = document.querySelector('#dateOfPublish');
-  let newPublishDate = publishedHook.value;
+let newPublishDate = publishedHook.value;
 
   addBookToLibrary(newTitle, newAuthor, newLength, newPublishDate);
   displayBooks();
@@ -121,16 +134,22 @@ addNewBook.addEventListener('click', () => {
   authorHook.value = '';
   titleHook.value = '';
   lengthHook.value = '';
+  publishedHook.value = '';
 });
 
 function deleteElementById(elementId) {
   const element = document.getElementById(elementId);
   if (element) {
-    element.remove();
+    const index = parseInt(elementId.split('-')[1]); // Extract the index from the elementId
+    myLibrary.splice(index, 1); // Remove the book object from the array
+    element.remove(); // Remove the element from the DOM
   }
 }
 
-// just a tweak that we can't make Year of publishing higher than current year
-const yearInput = document.getElementById("dateOfPublish");
-const currentYear = new Date().getFullYear();
-yearInput.setAttribute("max", currentYear);
+
+//
+document.addEventListener("DOMContentLoaded", () => {
+  addBookToLibrary("The Hobbit", "J. R. R. Tolkien", 1937, 310);
+  addBookToLibrary("Fear and Loathing in Las Vegas", "Hunter S. Thompson", 1971, 204);
+  displayBooks();
+});
